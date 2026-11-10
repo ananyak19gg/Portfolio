@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: #F4F4F0;
+    color: #111113;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background-color: #D8F827;
+    color: #111113;
+  }
+}
+
+/* Custom background patterns */
+.bg-grid-pattern {
+  background-image: 
+    linear-gradient(to right, rgba(17, 17, 19, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(17, 17, 19, 0.05) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+.bg-dots-pattern {
+  background-image: radial-gradient(rgba(17, 17, 19, 0.12) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* Brutalist and Editorial utility classes */
+.border-ink {
+  border-color: #111113;
+}
+
+.shadow-retro {
+  box-shadow: 4px 4px 0px 0px #111113;
+}
+
+.shadow-retro-sm {
+  box-shadow: 2px 2px 0px 0px #111113;
+}
+
+.shadow-retro-lg {
+  box-shadow: 6px 6px 0px 0px #111113;
+}
+
+.shadow-retro-blue {
+  box-shadow: 4px 4px 0px 0px #1D4ED8;
+}
+
+.shadow-retro-orange {
+  box-shadow: 4px 4px 0px 0px #FF5722;
+}
+
+.shadow-retro-lime {
+  box-shadow: 4px 4px 0px 0px #111113;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #EBEBE6;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #111113;
+  border-radius: 0px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #2563EB;
+}
+
+/* Subtle grain overlay */
+.noise-overlay {
+  position: relative;
+}
+.noise-overlay::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  opacity: 0.035;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
